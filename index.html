@@ -27,23 +27,8 @@
    <button>Submit</button>
  </form>
 
- <script src="/socket.io/socket.io.js"></script>
- <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
- <script>
-   var socket = io();
-   // $("#send").disable();
-   $('form').submit(function(){
-     var message = $('#message').val();
-     if(message === "" || !message){
-       return false;
-     }
-     socket.emit('chat message', $('#message').val());
-     $('#message').val('');
-     return false;
-   });
-   socket.on('chat message', function(msg){
-     $('#messages').append($('<li>').text(msg));
-   });
- </script>
+ <script src="socket.io/socket.io.js"></script>
+ <script src="lib/jquery/dist/jquery.min.js"></script>
+ <script src="script.js"></script>
 </body>
 </html>

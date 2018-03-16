@@ -1,0 +1,27 @@
+{
+  "name": "socket-chat-example",
+  "description": "my first socket.io app",
+  "main": "index.js",
+  "authors": [
+    "Dassi Orleando <me@dassiorleando.xyz>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "socket.io",
+    "nodejs",
+    "private",
+    "chat",
+    "chat"
+  ],
+  "homepage": "https://nodejssocketchat.herokuapp.com/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "3.3.1"
+  }
+}
