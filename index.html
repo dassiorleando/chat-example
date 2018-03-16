@@ -1,34 +1,126 @@
 <!doctype html>
-<html>
+<html lang="en">
+
 <head>
-  <title>NodeJS & Socket.IO chat</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font: 13px Helvetica, Arial; }
-    form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-    form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-    form button { width: 9%; background: blue; border: none; padding: 10px; color: white;}
-    #messages { list-style-type: none; margin: 0; padding: 0; }
-    #messages li { padding: 5px 10px; }
-    #messages li:nth-child(odd) { background: #eee; }
-    .title {color: blue; text-decoration: underline; font-style: italic; font-weight: bold; font-size: 2em;}
-  </style>
+  <title>Pryve: secured and lightweight private chat</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Material Design for Bootstrap fonts and icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+  <!-- Material Design for Bootstrap CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+    integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <header>
+    <div class="bg-dark collapse" id="navbarHeader" style="">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">About</h4>
+            <p class="text-muted">A secured and lightweight private chat that allows you to have secret chat with your knowledges in a fast way.
+              It revolutionizes the way we communicate with others and perform some business actions: hiring, interview ...</p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Contact</h4>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-white">Follow on Twitter</a>
+              </li>
+              <li>
+                <a href="#" class="text-white">Like on Facebook</a>
+              </li>
+              <li>
+                <a href="mailto:me@dassiorleando.xyz" class="text-white">Email me</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark box-shadow">
+      <div class="container d-flex justify-content-between">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <strong>Pryve</strong>
+        </a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-<center><div class="title"> Simple Chat Example: NodeJS & Socket.IO </div></center>
-<br/>
-<br/>
+  <!-- Main content of the page -->
+  <main role="main">
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Pryve</h1>
+        <p class="lead text-muted">
+          Pryve is a secured and lightweight private chat. Discuss with your knowledges in a fast way without your conversations being
+          recorded. All your conversation are sent between your two browser and never be seen elsewhere.
+        </p>
+        <p>
+          <button class="btn btn-success active chat-start-here">Start here</button>
+          <button class="btn btn-info active">How it works?</button>
+        </p>
+      </div>
+    </section>
 
-<ul id="messages"></ul>
+    <!-- chat component -->
+    <div class="album py-5 bg-light" id="chat-view">
+      <div class="container">
+        <center>
+          <h3 class="chat-title"> Simple Chat Example: NodeJS & Socket.IO </div>
+      </center>
+      <br/>
+      <br/>
+      <!-- Here we display all the messages -->
+      <ul id="messages"></ul>
 
-<form action="">
-   <input id="message" autocomplete="off" />
-   <button>Submit</button>
- </form>
+      <!-- Form the submit a message -->
+      <form action="" class="form-chat">
+        <label class="sr-only" for="message">Message</label>
+        <input type="text" class="form-control mb-2" id="message" placeholder="Your message goes here" autocomplete="off">
 
- <script src="socket.io/socket.io.js"></script>
- <script src="lib/jquery/dist/jquery.min.js"></script>
- <script src="script.js"></script>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- footer of the page -->
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <div class="mb-1">
+      <p>Pryve is © Fluid, but please
+        <a href="https://github.com/dassiorleando/chat-example">download</a> and customize it for yourself!
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- Include javascript files -->
+  <script src="socket.io/socket.io.js"></script>
+  <script src="lib/jquery/dist/jquery.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+    crossorigin="anonymous"></script>
+  <!-- Initiate bootstrap material stuff -->
+  <script>
+    $(document).ready(function () {
+      $('body').bootstrapMaterialDesign();
+    });
+  </script>
 </body>
 </html>

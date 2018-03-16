@@ -1,5 +1,7 @@
 node_modules/
 
-# We exclude all static folders/files(from bower) and keep our proper script.js
+# We exclude all static folders/files(from bower)
+# while keeping our proper script.js and style.css
 lib/*
 !lib/script.js
+!lib/style.css

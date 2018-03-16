@@ -10,4 +10,4 @@ To start using this simple chat app, you must just follow these simple steps.
 
 * After launch the app with: `node index.js`.
 
-* Now open your browser and type localhost:3000.
+* Now open your browser and type [http://localhost:3005](http://localhost:3005).
