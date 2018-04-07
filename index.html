@@ -100,7 +100,33 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="text-center">
-              <button type="submit" class="btn btn-primary mb-2">Submit</button>
+              <button type="button" class="form-message btn btn-primary mb-2">Submit</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- chat component -->
+    <div class="album py-5 bg-light" id="name-view">
+      <div class="container">
+        <center>
+          <h3 class="chat-title"> Fill your name first </div>
+      </center>
+      <br/>
+      <br/>
+      <!-- Here we display all the messages -->
+      <ul id="messages"></ul>
+
+      <!-- Form the submit a message -->
+      <form action="" class="form-chat">
+        <label class="sr-only" for="message">Name</label>
+        <input type="text" class="form-control mb-2" id="name" placeholder="Your name goes here" autocomplete="off">
+
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="text-center">
+              <button type="button" class="form-name btn btn-primary mb-2">Submit</button>
             </div>
           </div>
         </div>
